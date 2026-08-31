@@ -13,5 +13,5 @@ services:
       - ./minecraft:/minecraft/
     restart: unless-stopped
 
-  volumes:
-    minecraft:
+volumes:
+  minecraft:
