@@ -10,6 +10,8 @@ services:
       MEMORY_MIN: ${MEMORY_MIN}
       MEMORY_MAX: ${MEMORY_MAX}
     volumes:
-      # attach the relative directory 'data' to the container's /data path
       - ./minecraft:/minecraft/
     restart: unless-stopped
+
+  volumes:
+    minecraft:
