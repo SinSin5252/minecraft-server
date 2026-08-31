@@ -1,2 +1,3 @@
 minecraft/
-mc-test/
+mctest/
+.env
