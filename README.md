@@ -9,7 +9,6 @@ A Docker-based Minecraft server setup with persistent data storage and easy conf
 - [Quickstart](#quickstart)
     - [Prerequisities](#prerequisities)
     - [Run on Docker](#run-on-docker)
-
 - [Usage](#usage)
     - [Enviroment Variables](#enviroment-variables)
     - [Server Configuration](#server-configuration)
@@ -22,7 +21,7 @@ In order to quickly get started with the project follow these steps:
 
 - [Docker](https://www.docker.com/products/docker-desktop)
 
-> [!INFO]
+> [!NOTE]
 > Minecraft itself does not need to be installed on the computer running the server.
 >
 
@@ -69,7 +68,6 @@ eula=true
 ```
 docker compose restart
 ```
-
 
 4. Check whether the container is running:
 
