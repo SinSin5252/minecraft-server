@@ -6,12 +6,13 @@ A Docker-based Minecraft server setup with persistent data storage and easy conf
 
 ## Table of Content
 
-    - [Quickstart](#quickstart)
-        - [Prerequisities](#prerequisities)
-        - [Run on Docker](#run-on-docker)
-    - [Usage](#usage)
-        -[Enviroment Variables](#enviroment-variables)
-        -[Server Configuration](#server-configuration)
+- [Quickstart](#quickstart)
+    - [Prerequisities](#prerequisities)
+    - [Run on Docker](#run-on-docker)
+
+- [Usage](#usage)
+    - [Enviroment Variables](#enviroment-variables)
+    - [Server Configuration](#server-configuration)
 
 ## Quickstart
 
@@ -84,7 +85,7 @@ docker compose logs
 
 Once the server has successfully started, Minecraft Java Edition clients can connect to the server.
 
->[!INFO]
+>[!NOTE]
 >The server can be tested with `mcstatus` script from https://github.com/py-mine/mcstatus
 
 ## Usage
