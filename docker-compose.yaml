@@ -1,1 +1,17 @@
+services:
+  mc-server:
+    build: .
+    tty: true
+    stdin_open: true
+    ports:
+      - "8888:25565"
+    environment:
+      EULA: "TRUE"
+      MEMORY_MIN: ${MEMORY_MIN}
+      MEMORY_MAX: ${MEMORY_MAX}
+    volumes:
+      - ./minecraft:/minecraft/
+    restart: unless-stopped
 
+volumes:
+  minecraft:
