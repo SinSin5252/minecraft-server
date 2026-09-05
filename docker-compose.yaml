@@ -6,11 +6,17 @@ services:
     ports:
       - "8888:25565"
     environment:
-      EULA: "TRUE"
+      EULA: ${EULA}
+      MAX_PLAYERS: "${MAX_PLAYERS}"
+      DIFFICULTY: "${DIFFICULTY}"
+      GAMEMODE: "${GAMEMODE}"
+      PVP: "${PVP}"
+      ONLINE_MODE: "${ONLINE_MODE}"
+      VIEW_DISTANCE: "${VIEW_DISTANCE}"
       MEMORY_MIN: ${MEMORY_MIN}
       MEMORY_MAX: ${MEMORY_MAX}
     volumes:
-      - ./minecraft:/minecraft/
+      - minecraft:/minecraft/
     restart: unless-stopped
 
 volumes:
