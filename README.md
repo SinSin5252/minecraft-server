@@ -36,15 +36,8 @@ In order to quickly get started with the project follow these steps:
 ```
 MEMORY_MIN=1G
 MEMORY_MAX=2G
-```
-
-5. Create a folder named `minecraft` 
-
-6. Download the minecraft server file from https://www.minecraft.net/de-de/download/server in to the `minecraft` folder. The file can be downloaded with the following command:
-
-```
-cd minecraft
-wget https://piston-data.mojang.com/v1/objects/823e2250d24b3ddac457a60c92a6a941943fcd6a/server.jar 
+MINECRAFT_SERVER_URL=https://launcher.mojang.com/v1/objects/0f3e7c5b8d6a2e4f9b1c5e3f8c9e2a1b2c3d4e5f/server.jar
+EULA=True
 ```
 
 ### Run on Docker
@@ -54,28 +47,16 @@ Make sure Docker Desktop is running and that you are in the root directory of th
 1. Start the Minecraft server with:
 
 ```
-docker compose up -d
+docker compose up -d --build
 ```
 
-2. Accept EULA agreement with changing the value of `eula` to `true` in the `eula.txt` file, which is in `minecraft` folder.
-
-```
-eula=true
-```
-
-3. Restart the container 
-
-```
-docker compose restart
-```
-
-4. Check whether the container is running:
+3. Check whether the container is running:
 
 ```
 docker compose ps
 ```
 
-5. To view the server logs:
+4. To view the server logs:
 
 ```
 docker compose logs
@@ -98,23 +79,26 @@ The server can be configured using the `.env` file.
 |---|---|---|
 | `MEMORY_MIN` | Minimum amount of RAM allocated to the server | `1G` |
 | `MEMORY_MAX` | Maximum amount of RAM allocated to the server | `2G` |
+| `MINECRAFT_SERVER_URL` | URL used to download the Minecraft server JAR | `https://launcher.mojang.com/v1/objects/0f3e7c5b8d6a2e4f9b1c5e3f8c9e2a1b2c3d4e5f/server.jar` |
+| `EULA` | Specifies whether the Minecraft EULA has been accepted | `True` |
 
 >[!CAUTION]
 > Make sure that MEMORY_MAX does not exceed the amount of RAM available on the host system.
 
 ### Server Configuration
 
-After the first server startup, additional configuration files will be created inside the minecraft directory.
+Different Minecraft server configurations can be defined using environment variables in the `.env` file.
 
-The main server configuration can be found in `minecraft/server.properties`
-
-For example, the following settings can be configured:
+Add the corresponding variables to your `docker-compose.yaml` and define their values in the `.env` file. 
+For the current `docker-compose.yaml` a `.env` content example:
 
 ```
-motd=My Minecraft Server
-gamemode=survival
-difficulty=easy
-max-players=10
+MAX_PLAYERS=15
+DIFFICULTY=hard
+GAMEMODE=survival
+PVP=true
+ONLINE_MODE=true
+VIEW_DISTANCE=10
 ```
 
 After changing the configuration, restart the server:
