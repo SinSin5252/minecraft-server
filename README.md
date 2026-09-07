@@ -29,16 +29,11 @@ In order to quickly get started with the project follow these steps:
 
 2. Navigate to the repository
 
-3. Create `.env` file
-
-4. Insert those following variables:
-
+3. Create a `.env` based on the `.env.example` file
 ```
-MEMORY_MIN=1G
-MEMORY_MAX=2G
-MINECRAFT_SERVER_URL=https://launcher.mojang.com/v1/objects/0f3e7c5b8d6a2e4f9b1c5e3f8c9e2a1b2c3d4e5f/server.jar
-EULA=True
+cp .env.example .env
 ```
+
 
 ### Run on Docker
 
@@ -90,7 +85,7 @@ The server can be configured using the `.env` file.
 Different Minecraft server configurations can be defined using environment variables in the `.env` file.
 
 Add the corresponding variables to your `docker-compose.yaml` and define their values in the `.env` file. 
-For the current `docker-compose.yaml` a `.env` content example:
+For the current `docker-compose.yaml` a `.env` content section example:
 
 ```
 MAX_PLAYERS=15
