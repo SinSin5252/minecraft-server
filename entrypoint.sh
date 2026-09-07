@@ -4,9 +4,10 @@ wget ${MINECRAFT_SERVER_URL} -O server.jar
 
 java -Xmx${MEMORY_MAX} -Xms${MEMORY_MIN} -jar server.jar nogui
 
-if [ "$EULA" = "True" ] || [ "$EULA" = "TRUE" ] || [ "$EULA" = "true" ]; then
-    echo "eula=true" > /minecraft/eula.txt
-fi
+
+EULA=$(echo "${EULA}" | tr '[:upper:]' '[:lower:]')
+echo "eula=${EULA}" > /minecraft/eula.txt
+
 
 cat > /minecraft/server.properties <<EOF
 server-port=25565
