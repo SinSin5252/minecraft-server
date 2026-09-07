@@ -34,6 +34,8 @@ In order to quickly get started with the project follow these steps:
 cp .env.example .env
 ```
 
+4. Before starting the server, set `EULA=true` in the `.env` file to accept the Minecraft EULA.
+
 
 ### Run on Docker
 
@@ -60,7 +62,7 @@ docker compose logs
 Once the server has successfully started, Minecraft Java Edition clients can connect to the server.
 
 >[!NOTE]
->The server can be tested with `mcstatus` script from https://github.com/py-mine/mcstatus
+>The server can be tested on https://mcstatus.io/
 
 ## Usage
 
@@ -75,7 +77,7 @@ The server can be configured using the `.env` file.
 | `MEMORY_MIN` | Minimum amount of RAM allocated to the server | `1G` |
 | `MEMORY_MAX` | Maximum amount of RAM allocated to the server | `2G` |
 | `MINECRAFT_SERVER_URL` | URL used to download the Minecraft server JAR | `https://launcher.mojang.com/v1/objects/0f3e7c5b8d6a2e4f9b1c5e3f8c9e2a1b2c3d4e5f/server.jar` |
-| `EULA` | Specifies whether the Minecraft EULA has been accepted | `True` |
+| `EULA` | Specifies whether the Minecraft EULA has been accepted | `true` |
 
 >[!CAUTION]
 > Make sure that MEMORY_MAX does not exceed the amount of RAM available on the host system.
