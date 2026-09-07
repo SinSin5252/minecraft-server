@@ -1,7 +1,8 @@
 services:
   mc-server:
-    build: .
-    dockerfile: Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: mc-server:local
     tty: true
     stdin_open: true
