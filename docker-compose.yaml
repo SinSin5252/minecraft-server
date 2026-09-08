@@ -1,1 +1,26 @@
+services:
+  mc-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mc-server:local
+    tty: true
+    stdin_open: true
+    ports:
+      - "8888:25565"
+    environment:
+      EULA: ${EULA}
+      MAX_PLAYERS: "${MAX_PLAYERS}"
+      DIFFICULTY: "${DIFFICULTY}"
+      GAMEMODE: "${GAMEMODE}"
+      PVP: "${PVP}"
+      ONLINE_MODE: "${ONLINE_MODE}"
+      VIEW_DISTANCE: "${VIEW_DISTANCE}"
+      MEMORY_MIN: ${MEMORY_MIN}
+      MEMORY_MAX: ${MEMORY_MAX}
+    volumes:
+      - minecraft:/minecraft/
+    restart: unless-stopped
 
+volumes:
+  minecraft:
