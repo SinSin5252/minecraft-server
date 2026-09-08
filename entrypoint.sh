@@ -6,11 +6,11 @@ java -Xmx${MEMORY_MAX} -Xms${MEMORY_MIN} -jar server.jar nogui
 
 
 EULA=$(echo "${EULA}" | tr '[:upper:]' '[:lower:]')
-echo "eula=${EULA}" > /minecraft/eula.txt
 if [ "${EULA}" != "true" ]; then
     echo "Set the EULA to true to accept the agreement of the Minecraft EULA."
     exit 1
 fi
+echo "eula=${EULA}" > /minecraft/eula.txt
 
 
 cat > /minecraft/server.properties <<EOF
