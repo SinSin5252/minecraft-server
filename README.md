@@ -80,7 +80,7 @@ The server can be configured using the `.env` file.
 | `EULA` | Specifies whether the Minecraft EULA has been accepted | `true` |
 
 >[!CAUTION]
-> Make sure that MEMORY_MAX does not exceed the amount of RAM available on the host system.
+> Make sure that `MEMORY_MAX` does not exceed the amount of RAM available on the host system.
 
 ### Server Configuration
 
